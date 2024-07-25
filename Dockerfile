@@ -8,7 +8,8 @@ WORKDIR /app
 COPY requirements.txt .
 
 # Instala las dependencias de Python
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install safrs
+RUN pip install -r requirements.txt
 
 # Copia el resto del código fuente de la aplicación al contenedor
 COPY . .
@@ -17,4 +18,4 @@ COPY . .
 EXPOSE 8000
 
 # Comando para ejecutar la aplicación. Ajusta según sea necesario.
-CMD ["python", "examples/demo_relationship.py", "localhost"]
+CMD ["python", "examples/demo_relationship.py"]
