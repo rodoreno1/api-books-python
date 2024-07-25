@@ -18,4 +18,4 @@ COPY . .
 EXPOSE 8000
 
 # Comando para ejecutar la aplicación. Ajusta según sea necesario.
-CMD ["python", "examples/demo_relationship.py", "localhost"]
+CMD ["python", "examples/demo_relationship.py", "0.0.0.0", "8000"]
