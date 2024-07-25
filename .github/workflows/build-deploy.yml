@@ -40,7 +40,7 @@ jobs:
         uses: github/codeql-action/analyze@v2
         
   build-docker-image:
-    name: Build Docker image
+    name: build-docker-image
     needs: codeql-analysis
     runs-on: ubuntu-latest
     steps:
@@ -49,6 +49,6 @@ jobs:
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD_TESTAPI }}" | docker login -u "${{ secrets.DOCKER_USERNAME_TESTAPI }}" --password-stdin
       - name: Build Docker image
-        run: docker build . -t ${{ secrets.DOCKER_USERNAME_TESTAPI }}/python-app
+        run: docker build . -t ${{ secrets.DOCKER_USERNAME_TESTAPI }}/python-api-books
       - name: Push Docker image
-        run: docker push ${{ secrets.DOCKER_USERNAME_TESTAPI }}/python-app
+        run: docker push ${{ secrets.DOCKER_USERNAME_TESTAPI }}/python-api-books
