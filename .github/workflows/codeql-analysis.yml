@@ -6,9 +6,7 @@ on:
   pull_request:
     # The branches below must be a subset of the branches above
     branches: [main]
-  schedule:
-    - cron: '0 7 * * 0'
-    workflow_dispatch:  # Esto permite el disparo manual del workflow
+  workflow_dispatch: # Add this line to enable manual triggering
 
 jobs:
   analyze:
